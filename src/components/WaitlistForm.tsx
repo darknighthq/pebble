@@ -35,8 +35,8 @@ export function WaitlistForm() {
       aria-label="Join waitlist form"
     >
       <div className="mb-6 flex flex-col gap-5">
-        <div className="w-full">
-          <label htmlFor="email" className="block text-sm font-medium text-black">
+        <div className="flex flex-col items-start gap-2">
+          <label htmlFor="email" className="text-sm font-medium text-black">
             Email address
           </label>
           <input
@@ -46,11 +46,11 @@ export function WaitlistForm() {
             placeholder="you@brand.com"
             required
             aria-required="true"
-            className="mt-2 w-full border-2 border-black bg-white px-4 py-3 text-lg text-black placeholder:text-neutral-400 transition focus:border-black focus:outline-none focus:ring-0"
+            className="w-full border-2 border-black bg-white px-4 py-3 text-lg text-black placeholder:text-neutral-400 transition focus:border-black focus:outline-none focus:ring-0"
           />
         </div>
-        <div className="w-full">
-          <label htmlFor="store" className="block text-sm font-medium text-black">
+        <div className="flex flex-col items-start gap-2">
+          <label htmlFor="store" className="text-sm font-medium text-black">
             Store URL <span className="text-neutral-500">(optional)</span>
           </label>
           <input
@@ -59,7 +59,7 @@ export function WaitlistForm() {
             type="url"
             placeholder="https://yourstore.com"
             aria-required="false"
-            className="mt-2 w-full border border-neutral-300 bg-white px-4 py-3 text-lg text-black placeholder:text-neutral-400 transition focus:border-black focus:outline-none focus:ring-0"
+            className="w-full border border-neutral-300 bg-white px-4 py-3 text-lg text-black placeholder:text-neutral-400 transition focus:border-black focus:outline-none focus:ring-0"
           />
         </div>
       </div>
