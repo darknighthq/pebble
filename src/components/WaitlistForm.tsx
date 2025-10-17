@@ -36,7 +36,7 @@ export function WaitlistForm() {
     >
       <div className="mb-6 flex flex-col gap-5">
         <div className="flex flex-col items-start gap-2">
-          <label htmlFor="email" className="text-sm font-medium text-black">
+          <label htmlFor="email" className="text-sm font-medium text-neutral-500">
             Email address
           </label>
           <input
@@ -50,8 +50,8 @@ export function WaitlistForm() {
           />
         </div>
         <div className="flex flex-col items-start gap-2">
-          <label htmlFor="store" className="text-sm font-medium text-black">
-            Store URL <span className="text-neutral-500">(optional)</span>
+          <label htmlFor="store" className="text-sm font-medium text-neutral-500">
+            Store URL <span className="text-neutral-400">(optional)</span>
           </label>
           <input
             id="store"
