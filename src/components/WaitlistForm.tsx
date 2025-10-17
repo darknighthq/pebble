@@ -43,7 +43,7 @@ export function WaitlistForm() {
             id="email"
             name="email"
             type="email"
-            placeholder="you@brand.com"
+            placeholder="you@email.com"
             required
             aria-required="true"
             className="w-full border-2 border-black bg-white px-4 py-3 text-lg text-black placeholder:text-neutral-400 transition focus:border-black focus:outline-none focus:ring-0"
