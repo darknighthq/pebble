@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "PebbleCRM | Build Loyal Customers",
   description:
     "Join the PebbleCRM waitlist to centralize customer touchpoints and grow repeat revenue with a calm, modern workspace.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 export default function RootLayout({
