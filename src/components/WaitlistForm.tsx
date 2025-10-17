@@ -31,46 +31,67 @@ export function WaitlistForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-2xl space-y-6"
+      className="w-full max-w-2xl"
+      aria-label="Join waitlist form"
     >
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
-        <label className="w-full text-sm font-medium text-black">
-          Email address
+      <div className="mb-6 flex flex-col gap-5">
+        <div className="w-full">
+          <label htmlFor="email" className="block text-sm font-medium text-black">
+            Email address
+          </label>
           <input
+            id="email"
             name="email"
             type="email"
             placeholder="you@brand.com"
             required
-            className="mt-2 w-full border-b border-black bg-transparent px-0 py-2 text-base text-black placeholder:text-neutral-400 focus:border-black focus:outline-none"
+            aria-required="true"
+            className="mt-2 w-full border-2 border-black bg-white px-4 py-3 text-lg text-black placeholder:text-neutral-400 transition focus:border-black focus:outline-none focus:ring-0"
           />
-        </label>
-        <label className="w-full text-sm font-medium text-black sm:w-auto sm:min-w-[240px]">
-          Store URL (optional)
+        </div>
+        <div className="w-full">
+          <label htmlFor="store" className="block text-sm font-medium text-black">
+            Store URL <span className="text-neutral-500">(optional)</span>
+          </label>
           <input
+            id="store"
             name="store"
             type="url"
             placeholder="https://yourstore.com"
-            className="mt-2 w-full border-b border-neutral-300 bg-transparent px-0 py-2 text-base text-black placeholder:text-neutral-300 focus:border-black focus:outline-none"
+            aria-required="false"
+            className="mt-2 w-full border border-neutral-300 bg-white px-4 py-3 text-lg text-black placeholder:text-neutral-400 transition focus:border-black focus:outline-none focus:ring-0"
           />
-        </label>
+        </div>
       </div>
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <button
-          type="submit"
-          disabled={state === "loading"}
-          className="inline-flex h-11 items-center justify-center border border-black bg-black px-8 text-sm font-medium text-white transition hover:bg-neutral-900 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          {state === "loading" ? "Joining..." : "Join waitlist"}
-        </button>
-        <p className="text-sm text-neutral-500">
-          No spam. We'll invite a small group first.
-        </p>
-      </div>
-      <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+      
+      <button
+        type="submit"
+        disabled={state === "loading"}
+        aria-busy={state === "loading"}
+        className="mb-4 inline-flex h-14 w-full items-center justify-center border-2 border-black bg-black px-8 text-base font-medium tracking-wide text-white transition hover:bg-white hover:text-black disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:min-w-[200px]"
+      >
+        {state === "loading" ? "Joining..." : "Join waitlist"}
+      </button>
+      
+      <p className="text-sm leading-relaxed text-neutral-600">
+        No spam. We'll invite a small group of ecommerce founders first.
+      </p>
+      
+      <input 
+        type="text" 
+        name="company" 
+        className="hidden" 
+        tabIndex={-1} 
+        autoComplete="off"
+        aria-hidden="true"
+      />
+      
       {message && (
         <p
-          className={`text-sm font-medium ${
-            state === "success" ? "text-black" : "text-neutral-500"
+          role={state === "error" ? "alert" : "status"}
+          aria-live="polite"
+          className={`mt-4 text-sm font-medium ${
+            state === "success" ? "text-black" : "text-red-600"
           }`}
         >
           {message}
