@@ -202,40 +202,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Results & Testimonials */}
-        <section className="mb-48 border-t border-neutral-200 pt-20">
-          <div className="mb-20">
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-neutral-400">
-              Results
-            </p>
-            <h3 className="mb-4 text-6xl font-light tracking-tight">
-              38%
-            </h3>
-            <p className="max-w-lg text-sm leading-relaxed text-neutral-600">
-              Average increase in repeat revenue in the first 60 days after switching to Pebble.
-            </p>
-          </div>
-          
-          <div className="grid gap-12 sm:grid-cols-2">
-            <div className="border-l-2 border-black pl-6">
-              <p className="mb-4 text-base leading-relaxed text-neutral-700">
-                "Pebble finally gives our CX and retention team the same playbook. We can see what works and scale it overnight."
-              </p>
-              <p className="text-xs uppercase tracking-[0.28em] text-neutral-400">
-                Head of retention · DTC apparel
-              </p>
-            </div>
-            <div className="border-l-2 border-black pl-6">
-              <p className="mb-4 text-base leading-relaxed text-neutral-700">
-                "Integrations were lightning fast. The team now knows exactly who to call and which message converts."
-              </p>
-              <p className="text-xs uppercase tracking-[0.28em] text-neutral-400">
-                Founder · Supplements brand
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Final CTA */}
         <section className="border-t border-neutral-200 pt-20 text-center">
           <p className="mb-4 text-xs uppercase tracking-[0.3em] text-neutral-400">
