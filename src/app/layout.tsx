@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PebbleCRM | Modern CRM for Ecommerce Brands",
+  title: "PebbleCRM | Build Loyal Customers",
   description:
-    "PebbleCRM helps ecommerce teams orchestrate call and SMS follow-ups, centralize customer data, and drive repeat revenue.",
+    "Join the PebbleCRM waitlist to centralize customer touchpoints and grow repeat revenue with a calm, modern workspace.",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-[var(--background)] text-[var(--foreground)] antialiased`}
       >
         {children}
       </body>

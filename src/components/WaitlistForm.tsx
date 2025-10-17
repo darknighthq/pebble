@@ -31,46 +31,46 @@ export function WaitlistForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-xl space-y-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur"
+      className="w-full max-w-2xl space-y-6"
     >
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <label className="w-full text-sm font-medium text-white/80">
-          Email
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
+        <label className="w-full text-sm font-medium text-black">
+          Email address
           <input
             name="email"
             type="email"
             placeholder="you@brand.com"
             required
-            className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/50 shadow-sm focus:border-white focus:outline-none focus:ring-2 focus:ring-white/60"
+            className="mt-2 w-full border-b border-black bg-transparent px-0 py-2 text-base text-black placeholder:text-neutral-400 focus:border-black focus:outline-none"
           />
         </label>
-        <label className="w-full text-sm font-medium text-white/80 sm:w-1/2">
+        <label className="w-full text-sm font-medium text-black sm:w-auto sm:min-w-[240px]">
           Store URL (optional)
           <input
             name="store"
             type="url"
             placeholder="https://yourstore.com"
-            className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/40 shadow-sm focus:border-white focus:outline-none focus:ring-2 focus:ring-white/40"
+            className="mt-2 w-full border-b border-neutral-300 bg-transparent px-0 py-2 text-base text-black placeholder:text-neutral-300 focus:border-black focus:outline-none"
           />
         </label>
       </div>
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
           disabled={state === "loading"}
-          className="inline-flex h-12 items-center justify-center rounded-xl bg-white px-6 text-sm font-semibold leading-none text-slate-900 shadow-lg shadow-slate-950/20 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:bg-white/70 disabled:text-slate-700"
+          className="inline-flex h-11 items-center justify-center border border-black bg-black px-8 text-sm font-medium text-white transition hover:bg-neutral-900 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {state === "loading" ? "Joining..." : "Join the waitlist"}
+          {state === "loading" ? "Joining..." : "Join waitlist"}
         </button>
-        <p className="text-sm text-white/70">
-          No spam. We’ll invite a small group of ecommerce founders first.
+        <p className="text-sm text-neutral-500">
+          No spam. We'll invite a small group first.
         </p>
       </div>
       <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
       {message && (
         <p
           className={`text-sm font-medium ${
-            state === "success" ? "text-emerald-300" : "text-rose-300"
+            state === "success" ? "text-black" : "text-neutral-500"
           }`}
         >
           {message}
@@ -79,4 +79,3 @@ export function WaitlistForm() {
     </form>
   );
 }
-
