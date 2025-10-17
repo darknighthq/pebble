@@ -92,7 +92,7 @@ export default function Home() {
               {logos.map((integration) => (
                 <div
                   key={integration.name}
-                  className="flex h-16 w-full items-center justify-center grayscale opacity-40 transition hover:opacity-60"
+                  className="flex h-16 w-full items-center justify-center opacity-80 transition hover:opacity-100"
                 >
                   <Image
                     src={integration.logo}
