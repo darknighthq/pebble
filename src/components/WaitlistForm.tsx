@@ -74,7 +74,7 @@ export function WaitlistForm() {
       </button>
       
       <p className="text-sm leading-relaxed text-neutral-600">
-        No spam. We'll invite a small group of ecommerce founders first.
+        No spam. We&apos;ll invite a small group of ecommerce founders first.
       </p>
       
       <input 
