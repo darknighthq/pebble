@@ -10,7 +10,8 @@ export function WaitlistForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     const email = (form.get("email") as string)?.trim();
 
     if (!email) {
@@ -22,10 +23,35 @@ export function WaitlistForm() {
     setState("loading");
     setMessage("");
 
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    setState("success");
-    setMessage("Thanks! We'll be in touch soon.");
-    event.currentTarget.reset();
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          store: (form.get("store") as string)?.trim() ?? "",
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error ?? "Something went wrong. Please try again.");
+      }
+
+      setState("success");
+      setMessage(data.message ?? "Thanks! We'll be in touch soon.");
+      formElement.reset();
+    } catch (error) {
+      setState("error");
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "We couldn't submit your request. Please try again.",
+      );
+    }
   }
 
   return (

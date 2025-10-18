@@ -20,6 +20,19 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Environment variables
+
+Populate the following values in `.env.local` to enable waitlist email notifications via Mailjet:
+
+```
+MAILJET_API_KEY=<your-mailjet-api-key>
+MAILJET_API_SECRET=<your-mailjet-api-secret>
+MAILJET_SENDER_EMAIL=<verified-mailjet-sender-email>
+MAILJET_WAITLIST_RECIPIENT=<email-receiving-signups>
+# Optional: overrides sender name shown in the email
+MAILJET_SENDER_NAME=PeppleCRM
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
